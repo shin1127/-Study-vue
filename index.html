@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="main.js"></script>
-  </body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <title>vue test</title>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <div id="app">
-      <form>
-        <input type="text" v-model="message" />
-        <p>Message is {{ message }}</p>
-      </form>
+      {{ message}}
+      <br />
+      <!-- consoleでshow=falseとするとpタグ内が消失する -->
+      <p v-if="show">Hello Vues.js!</p>
+      <input v-model="message" />
+      <ol>
+        <li v-for="item in list">{{ item }}</li>
+      </ol>
+      <br />
+
+      <button v-on :click="handleClick">Click</button>
+      <button v-on:click="show=!show">きりかえ</button>
+      <transition>
+        <p v-if="show">hello world!</p>
+      </transition>
     </div>
-    ViewModelはid設定した要素より後ろで読み込む
-<script type="text/javascript" src="main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
- -->
